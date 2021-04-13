@@ -1,7 +1,7 @@
 const web_socket = require("websocket").server;
 const http = require("http");
 const server = http.createServer((req, res) => {});
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log("Listening on port 3000...");
 });
 const webSocket = new web_socket({
