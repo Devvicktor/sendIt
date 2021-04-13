@@ -1,0 +1,164 @@
+
+ html, body {
+    height: 100%;
+    font-family:'Open Sans', 'Lucida Grande', Arial, Helvetica, sans-serif;
+  }
+  /*/*/
+  nav ul {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+nav>ul>li>a {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+}
+/**/
+.call-action {
+    position: absolute;
+    left: 45px;
+    bottom: 10px;
+}
+#buttons {
+    width: 80px;
+    height: 24px;
+    top: calc(100% - 40px);
+    background-color: rgba(150, 0, 0, 0.7);
+    box-shadow: black 0px 0px 4px;
+    font-size: 14px;
+    font-family: "Lucida Grande", Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 8px;
+    margin: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.7);
+    border-image: initial;
+}
+#received_video {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    box-shadow: black 0px 0px 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.7);
+    border-image: initial;
+    border-radius: 16px;
+}
+/*/*/
+
+#local_video {
+    max-width: 32%;
+    max-height: 26%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    box-shadow: black 0px 0px 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.7);
+    border-image: initial;
+    border-radius: 16px;
+}
+/**/
+.tool-container {
+    height: 76vh;
+    margin: 20px;
+}
+
+/*/*/
+.camerabox {
+    position: absolute;
+    top: 200px;
+    width: 700px;
+    height: 511px;
+    left: 30%;
+    vertical-align: top;
+    grid-area: camerabox / camerabox / camerabox / camerabox;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.7);;
+    border-image: initial;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: black 0px 0px 4px;
+    display: none;
+}
+.footer {
+    display: flex;
+    background-color: rgb(38, 39, 43);
+    font-size: 15px;
+    line-height: 24px;
+    color: rgb(115, 115, 115);
+    margin-top: 54px;
+}
+.buttons {
+    display: flex;
+    padding: 45px 0 45px 185px;
+}
+.footer-buttons {
+    cursor: pointer;
+    margin-left: 100px;
+}
+.title {
+    display: none;
+}
+/*modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

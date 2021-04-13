@@ -1,0 +1,27 @@
+{
+  "name": "editor-app",
+  "version": "1.0.0",
+  "description": "This is repo contains work in progress files for [ ehh ] p2p and dragNDrop Module.",
+  "main": "main.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "websocket": "^1.0.33"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bronzwikgk/workInTogether.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bronzwikgk/workInTogether/issues"
+  },
+  "homepage": "https://github.com/bronzwikgk/workInTogether#readme"
+}
