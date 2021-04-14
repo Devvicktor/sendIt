@@ -1,4 +1,4 @@
-const web_socket = new WebSocket("ws://sendithere.herokuapp.com/");
+const web_socket = new WebSocket("wss://sendithere.herokuapp.com/");
 
 web_socket.onmessage = (e) => {
   function handleSignallingData(data) {
