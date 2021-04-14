@@ -73,7 +73,7 @@ function startCall() {
 }
 
 function createAndSendOffer() {
-  peerConnection.creatOffer((offer) => {
+  peerConnection.createOffer((offer) => {
     sendData({
       type: "store_offer",
       offer: offer
