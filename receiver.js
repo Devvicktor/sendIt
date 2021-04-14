@@ -1,5 +1,5 @@
 
-const web_socket = new WebSocket ('ws://127.0.0.1:3000');
+const web_socket = new WebSocket ('ws://localhost:5000');
 
 
 web_socket.onmessage=(e)=>{
@@ -46,15 +46,9 @@ function joinCall () {
      localStream = stream;
       document.getElementById ('local_video').srcObject = localStream;
       let configuration = {
-        iceServers: [
-          {
-            urls: [
-              'stun:stun.l.google.com:19302',
-              'stun:stun1.l.google.com:19302',
-              'stun:stun2.l.google.com:19302',
-            ],
-          },
-        ],
+        "iceServers": [{
+          "url":'stun:stun2.l.google.com:19302'
+        }]
       };
       peerConnection = new RTCPeerConnection (configuration);
       peerConnection.addStream (localStream);
