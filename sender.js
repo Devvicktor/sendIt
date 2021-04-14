@@ -29,6 +29,13 @@ let peerConnection;
 
 function startCall() {
   document.getElementById('video-call-div').style.display = 'inline';
+  navigator.getUserMedia = (
+    navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia
+);
+if(navigator.getUserMedia){
   navigator.getUserMedia({
       video: {
         frameRate: 24,
@@ -70,6 +77,9 @@ function startCall() {
       console.log(error);
     }
   );
+}else {
+  console.log("getUserMedia not supported");
+}
 }
 
 function createAndSendOffer() {
