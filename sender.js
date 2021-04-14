@@ -23,6 +23,7 @@ function sendUsername() {
 function sendData(data) {
   data.username = username;
   webSocket.send(JSON.stringify(data));
+  console.log('data',data)
 }
 let localStream;
 let peerConnection;
@@ -59,12 +60,12 @@ if(navigator.getUserMedia){
 
       };
       peerConnection = new RTCPeerConnection(configuration);
-      peerConnection.addStream(localStream);
+      peerConnection.addEventListener("addstream", ev => doAddStream(ev.localStream), false);
       peerConnection.onaddstream = e => {
         document.getElementById('remote_video').srcObject = e.stream;
       };
       peerConnection.onicecandidate = ((e) => {
-        if (e.candidate == null)
+        if (e.candidate)
           return
         sendData({
           type: "store_candidate",
@@ -86,10 +87,12 @@ function createAndSendOffer() {
   peerConnection.createOffer((offer) => {
     sendData({
       type: "store_offer",
-      offer: offer
+      offer: offer,
+
     }, (err) => {
       console.log(err)
     })
+    console.log('offer',offer)
   })
 }
 
