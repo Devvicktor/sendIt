@@ -18,12 +18,11 @@ function sendData (data) {
   data.username = username;
   web_socket.send (JSON.stringify (data));
 }
-
+let localStream;
+let username;
+let peerConnection;
 function joinCall () {
-  let localStream;
-  let username;
-  let peerConnection;
-  username = document.getElementById ('join-input').value;
+ username = document.getElementById ('join-input').value;
   document.getElementById ('video-call-div').style.display = 'inline';
   navigator.getUserMedia =
     navigator.getUserMedia ||
@@ -55,12 +54,13 @@ function joinCall () {
           ],
         };
         peerConnection = new RTCPeerConnection (configuration);
-        peerConnection.addStream (localStream);
+        peerConnection.addEventListener("addstream", ev => doAddStream(ev.localStream), false);
         peerConnection.onaddstream = e => {
           document.getElementById ('remote_video').srcObject = e.stream;
         };
         peerConnection.onicecandidate = e => {
-          if (e.candidate == null) return;
+          if (e.candidate) 
+          return;
           sendData ({
             type: 'send_candidate',
             candidate: e.candidate,
