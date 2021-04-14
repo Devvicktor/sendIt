@@ -29,7 +29,7 @@ function joinCall () {
     let localStream;
      let username;
      let peerConnection;
-    username=document.getElementById("username-input").value
+    username=document.getElementById("join-input").value
   document.getElementById ('video-call-div').style.display = 'inline';
   navigator.getUserMedia(
     {
