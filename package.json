@@ -4,7 +4,7 @@
   "description": "This is repo contains work in progress files for [ ehh ] p2p and dragNDrop Module.",
   "engines": {
     "node": "14.16.1",
-    "npm":"6.13.4"
+    "npm": "6.13.4"
   },
   "main": "main.js",
   "directories": {
@@ -16,7 +16,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node sender.js"
   },
   "repository": {
     "type": "git",
