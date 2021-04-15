@@ -1,5 +1,5 @@
 
-var https = require('https');
+var http= require('http');
 var fs = require('fs');
 var WebSocketServer = require('websocket').server;
 
@@ -42,11 +42,11 @@ fs.readFile ('./sender.js', function (err, data) {
   }
   senderJS = data;
 });
-const options = {
-  key: fs.readFileSync('./certs/key.pem'),
-  cert: fs.readFileSync('./certs/cert.pem')
-};
-const server = https.createServer(options,(request, response) => {
+// const options = {
+//   key: fs.readFileSync('./certs/key.pem'),
+//   cert: fs.readFileSync('./certs/cert.pem')
+// };
+const server = http.createServer((request, response) => {
   switch (request.url) {
       case '/main.css':
         response.writeHead (200, {'Content-Type': 'text/css'});
