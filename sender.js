@@ -42,12 +42,6 @@ fs.readFile ('./sender.js', function (err, data) {
   }
   senderJS = data;
 });
-fs.readFile ('./server.js', function (err, data) {
-  if (err) {
-    throw err;
-  }
-  serverJS = data;
-});
 const options = {
   key: fs.readFileSync('./certs/key.pem'),
   cert: fs.readFileSync('./certs/cert.pem')
@@ -69,10 +63,6 @@ const server = https.createServer(options,(request, response) => {
       case '/sender.js':
         response.writeHead (200, {'Content-Type': 'text/javascript'});
         response.write (senderJS);
-        break;
-      case '/server.js':
-        response.writeHead (200, {'Content-Type': 'text/javascript'});
-        response.write (serverJS);
         break;
 
       default:
